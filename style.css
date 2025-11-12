@@ -1,0 +1,23 @@
+/* General */
+html {
+    background-color: rgb(245, 237, 221);
+    font-family: Verdana, sans-serif;
+    text-align: left;
+    margin-left: 10%;
+}
+
+/* The main page */
+body {
+    font-size: 4vh;
+}
+
+/* The color of links */
+a:link, a:visited, a:focus, a:hover, a:active {
+    color: #000000
+}
+
+/* The input box */
+input {
+    height: 4vh;
+    font-size: 3vh;
+}
