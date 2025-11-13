@@ -28,8 +28,16 @@ function isInt(n) {
   return n == Math.floor(n);
 }
 
+function setStatus(action, start) {
+  const end = new Date();
+  const delta = end - start;
+  const status = document.getElementById('status');
+  status.innerText = `${action} in ${delta} ms`;
+}
+
 function processWords(words) {
-  console.time('processing');
+  const start = new Date();
+
   words = words.map(function(text) {
     return {
       text: text,
@@ -37,7 +45,8 @@ function processWords(words) {
       positions: bucketize(text),
     }
   });
-  console.timeEnd('processing');
+
+  setStatus('Processed', start);
   return words;
 }
 
@@ -196,14 +205,14 @@ function filterWords(words, filters) {
 
 
 function main(words) {
-  console.time('search');
+  const start = new Date();
 
   const filterInput = document.getElementById('filterInput');
   const filters = readFilters(filterInput.value);
 
   const matches = filterWords(words, filters);
 
-  console.timeEnd('search');
+  setStatus('Searched', start);
   displayWords(matches);
 }
 
