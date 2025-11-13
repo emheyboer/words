@@ -8,7 +8,7 @@
   </script>
 </head>
 <body>
-    <label for="letterinput">Words</label><br>
+    <label for="filterInput">Words</label><br>
     <textarea
     placeholder="filters e.g.
 req abc
@@ -21,8 +21,8 @@ pat c_ab_"
     autofocus="true"
     rows="10"
     cols="40"
-    id=filterinput></textarea>
-    <pre>
+    id="filterInput"></textarea>
+    <pre id="filterList">
 required: 'req [letters]' (cumulative)
 disallowed: 'dis [letters]' (cumulative)
 available pool: 'pol [letters]'

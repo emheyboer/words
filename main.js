@@ -198,17 +198,18 @@ function filterWords(words, filters) {
 function main(words) {
   console.time('search');
 
-  var filters = readFilters(filterinput.value);
+  const filterInput = document.getElementById('filterInput');
+  const filters = readFilters(filterInput.value);
 
-  var matches = filterWords(words, filters);
+  const matches = filterWords(words, filters);
 
   console.timeEnd('search');
   displayWords(matches);
 }
 
 window.onload = async function() {
-  console.log('Starting...')
-  filterinput.disabled = true;
+  const filterInput = document.getElementById('filterInput');
+  filterInput.disabled = true;
 
   const rawwords = localStorage.getItem('rawwords');
   if (rawwords) {
@@ -217,11 +218,9 @@ window.onload = async function() {
     window.words = await fetchWords();
   }
 
-  filterinput.disabled = false;
+  filterInput.disabled = false;
 
-  filterinput.oninput = () => main(words);
+  filterInput.oninput = () => main(words);
 
   main(words);
-
-  console.log('Done');
 }
