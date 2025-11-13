@@ -9,11 +9,21 @@ html {
 /* The main page */
 body {
     font-size: 4vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#filterInput {
+    width: 50%;
 }
 
 /* The color of links */
 a:link, a:visited, a:focus, a:hover, a:active {
     color: #000000
+}
+
+#status, #filterList {
+    font-size: 2vh;
 }
 
 /* The input box */
