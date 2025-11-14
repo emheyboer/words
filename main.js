@@ -67,7 +67,7 @@ function bucketize(word) {
 }
 
 function fetchWords(words) {
-  return fetch('/words.txt')
+  return fetch('words.txt')
     .then(r=>r.text()).then(function(words) {
       words = words.split('\n');
       localStorage.setItem('rawwords', words.join(','));
